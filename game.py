@@ -39,10 +39,10 @@ class MallardDuck(Duck):
         pass
 
     def display(self):
-        print("Ejemplar cabeza verde")
+        print("MallardDuck: Ejemplar cabeza verde")
 
     def fly(self):
-        print("33 aleteos por minuto")
+        print("MallardDuck: 33 aleteos por minuto")
 
 
 class RedHeadDuck(Duck):
@@ -56,10 +56,10 @@ class RedHeadDuck(Duck):
         pass
 
     def display(self):
-        print("Ejemplar cabeza roja")
+        print("RedHeadDuck : Ejemplar cabeza roja")
 
     def fly(self):
-        print("40 aleteos por minuto")
+        print("RedHeadDuck : 40 aleteos por minuto")
 
 
 class RubberDuck(Duck):
@@ -68,16 +68,16 @@ class RubberDuck(Duck):
         pass
 
     def quack(self):
-        pass
+        print("RubberDuck: Silvido")
 
     def swim(self):
         pass
 
     def display(self):
-        print("Ejemplar amarillo")
+        print("RubberDuck : Ejemplar amarillo")
 
     def fly(self):
-        print("0 aleteos por minuto")
+        print("RubberDuck : 0 aleteos por minuto")
 
 
 mallard = MallardDuck()
@@ -92,9 +92,35 @@ de mejorar.
 Para ellos los ejecutivos deciden que es haciendo que los patos vuelen
 en el simulador aplastará a la competencia.
 El programador Juan piensa: "Solo necesito agregar el método fly en la clase
-base Duck  y así todos los tipos de patos heredarán de ella ¿Que tan difícil 
+base Duck  y así todos los tipos de patos heredarán de ella ¿Que tan difícil
 puede ser?. Bendita POO"
 """
 mallard.fly()
 red_head.fly()
 rubber.fly()
+
+
+"""
+Sin embargo la jefa prueba la aplicación y le parece una broma que los
+patos de hule PUEDAN VOLAR, se ha agregado comportamiento inadecuado
+a algunas SUBCLASES, ahora tenemos volando por la pantalla
+objetos inanimados.
+"""
+rubber.quack()
+
+
+"""
+Y ahora para complicar todo se pide agregar un pato de señuelo para 
+cacería, oops, ninguno vuela ni grazna.
+"""
+Interface CountFishInterface:
+    "Fish counting interface"
+
+    def oneFish():
+        "Increments the fish count by one"
+
+    def twoFish():
+        "Increments the fish count by two"
+
+    def getFishCount():
+        "Returns the fish count"
