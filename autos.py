@@ -6,6 +6,13 @@ class Coche:
         self.encendido = False
         print(f"Tenemos {gasolina} litros")
 
+    def conducir(self):
+        if self.gasolina > 0 and self.encendido:
+            self.gasolina -= 1
+            print(f"Quedan { self.gasolina} litros")
+        else:
+            print("No se mueve")
+
     def arrancar(self):
         if self.gasolina > 0:
             self.encendido = not self.encendido
@@ -14,15 +21,11 @@ class Coche:
             self.encendido = False
             print("No arranca")
 
-    def conducir(self):
-        if self.gasolina > 0 and self.encendido:
-            self.gasolina -= 1
-            print(f"Quedan { self.gasolina} litros")
-        else:
-            print("No se mueve")
-
 
 class CuatroXCuatro(Coche):
+    def arrancar(self):
+        super().arrancar()
+        print("Rrrrrnnnnn Rnnnn")
 
     def habilitar4X4(self, kilos):
         if self.encendido is True:
@@ -37,5 +40,4 @@ s = CuatroXCuatro(87)
 s.arrancar()
 s.conducir()
 s.habilitar4X4(50)
-s.conducir()
 s.conducir()
