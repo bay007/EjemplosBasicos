@@ -22,10 +22,20 @@ class Coche:
             print("No se mueve")
 
 
-coche_juan = Coche(20)
-coche_juan.arrancar()
-coche_juan.conducir()
-coche_juan.conducir()
-coche_juan.arrancar()
-coche_juan.conducir()
-coche_juan.conducir()
+class CuatroXCuatro(Coche):
+
+    def habilitar4X4(self, kilos):
+        if self.encendido is True:
+            self.arrancar()
+            print(f"Activando 4X4 para cargar {kilos}")
+            self.arrancar()
+        else:
+            print(f"No se puede Activar si esta apagado ")
+
+
+s = CuatroXCuatro(87)
+s.arrancar()
+s.conducir()
+s.habilitar4X4(50)
+s.conducir()
+s.conducir()
